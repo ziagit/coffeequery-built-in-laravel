@@ -20,8 +20,8 @@ class AppServiceProvider extends ServiceProvider
         view()->share('pageTitle', 'Coffee Query');
         view()->share('metaContent', 'Coffee Query');
 
-        $posts = Post::latest()->get(['id','title','image'])->take(5);
-        $projects = Project::latest()->get(['id','title','image'])->take(5);
+        $posts = Post::latest()->get(['id','title','slug','image'])->take(5);
+        $projects = Project::latest()->get(['id','title','slug','image'])->take(5);
 
         view()->share('sharedPosts', $posts);
         view()->share('sharedProjects', $projects);
